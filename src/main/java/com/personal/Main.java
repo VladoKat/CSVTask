@@ -78,7 +78,7 @@ public class Main {
                 writer.writeNext(data);
             }
         }
-
+        System.out.println("Finished");
         // closing writer connection
         writer.close();
 
