@@ -18,25 +18,8 @@ public class Main {
         if (args.length == 2) {
             pathToSalesmanList = args[0];
             pathToReportList = args[1];
-            String salesmenJsonStr = "  [\n" +
-                    "{\n" +
-                    "\"name\": \"John Smith\",\n" +
-                    "\"totalSales\": 250,\n" +
-                    "\"salesPeriod\": 10,\n" +
-                    "\"experienceMultiplier\": 0.5\n" +
-                    "},\n" +
-                    "{\n" +
-                    "\"name\": \"David Prowless\",\n" +
-                    "\"totalSales\": 230,\n" +
-                    "\"salesPeriod\": 10,\n" +
-                    "\"experienceMultiplier\": 0.5\n" +
-                    "}\n" +
-                    "]";/*sendGet(pathToSalesmanList);*/
-            String reportJsonStr = "{\n" +
-                    "\"topPerformersThreshold\": 600,\n" +
-                    "\"useExperienceMultiplier\": true,\n" +
-                    "\"periodLimit\": 10\n" +
-                    "}";/*sendGet(pathToReportList);*/
+            String salesmenJsonStr = sendGet(pathToSalesmanList);
+            String reportJsonStr = sendGet(pathToReportList);
             Gson gson = new Gson();
 
             Salesman[] salesArr = gson.fromJson(salesmenJsonStr, Salesman[].class);
